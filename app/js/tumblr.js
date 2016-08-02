@@ -52,8 +52,8 @@ app.partial.tumblr = function(){
 		});
 	});
 
-	$(window).resize(function(){
-		var caption = $('.single aside')
+	$(window).on('resize', function(){
+		var caption = $('.single aside');
 		caption.height(caption.outerWidth())
 		.css('min-height', caption.outerWidth() +'px');
 	});
