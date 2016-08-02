@@ -52,6 +52,12 @@ app.partial.tumblr = function(){
 		});
 	});
 
+	$(window).resize(function(){
+		var caption = $('.single aside')
+		caption.height(caption.outerWidth())
+		.css('min-height', caption.outerWidth() +'px');
+	});
+
 	_.each(tumblr_api_read.posts, function(d, i){
 		_(d.tags).each(function(name, index){
 			tumblrTags[name] = true;
