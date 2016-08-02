@@ -8,22 +8,48 @@
 var tumblrTags = {};
 app.partial.tumblr = function(){
 	_(_.reverse(tumblr_api_read.posts)).each(function(d, i){
-		var caption = $('<div>'+d['photo-caption']+'</div>')
-		.sm(12).md(12).lg(12).xs(12).fontsize(13)
-		.css('background', 'url(' + d['photo-url-500'] + ')')
-		.css('background-size', 'cover');
 
-		var single = $('<div></div>')
-		.addClass('single')
-		.sm(2).md(2).lg(2).xs(2)
-		.css('margin-top', '20px')
-		.append(caption);
+		var caption = $('<aside class=\'vertical-middle\'><h3 class=\'caption\'>'+d['photo-caption']+'</h3></aside>')
+			.sm(12).md(12).lg(12).xs(12).fontsize(13)
+			.css('background', 'url(' + d['photo-url-500'] + ')')
+			.css('background-size', 'cover');
+
+		var single = $('<a href=\'javascript:\'></a>').addClass('single')
+			.sm(6).md(2).lg(2).xs(6)
+			.css('margin-top', '20px')
+			.append(caption);
+
 		if(typeof d.tags != 'undefined'){
 			single.attr('data-tags', d.tags.join(' '));
 		}
+
 		$('.jumbotron').addClass('row').fontsizeReset().append(single);
 		caption.height(caption.outerWidth())
 		.css('min-height', caption.outerWidth() +'px');
+
+		single.on('click', function(){
+			var photos = [];
+			if(d.photos.length){
+				_(d.photos).each(function(photo, num){
+					photos.push({
+						'src': photo['photo-url-1280'],
+						'thumb': photo['photo-url-250'],
+						'subHtml': d['photo-caption']
+					});
+				});
+			}else{
+				photos.push({
+					'src': d['photo-url-1280'],
+					'thumb': d['photo-url-250'],
+					'subHtml': d['photo-caption']
+				});
+			}
+			$(single).lightGallery({
+				thumbnail: true,
+				dynamic: true,
+				dynamicEl: photos
+			});
+		});
 	});
 
 	_.each(tumblr_api_read.posts, function(d, i){
