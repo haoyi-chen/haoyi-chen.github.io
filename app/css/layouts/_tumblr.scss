@@ -25,10 +25,11 @@
 				opacity: inherit;
 			}
 		}
-		aside{
+		>aside{
 			margin:0;
 			color: #eee;
 			letter-spacing: -1em;
+			border: 1px solid #878787;
 			&:after{
 				opacity: 0;
 				background: rgba(0,0,0,0.6);
