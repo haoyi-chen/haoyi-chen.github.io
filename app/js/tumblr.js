@@ -7,14 +7,14 @@
 /*global $, _, app, tumblr_api_read */
 var tumblrTags = {};
 app.partial.tumblr = function(){
-	_(_.reverse(tumblr_api_read.posts)).each(function(d, i){
+	_(tumblr_api_read.posts).each(function(d, i){
 
 		var caption = $('<aside class=\'vertical-middle\'><h3 class=\'caption\'>'+d['photo-caption']+'</h3></aside>')
 			.sm(12).md(12).lg(12).xs(12).fontsize(13)
 			.css('background', 'url(' + d['photo-url-500'] + ')')
 			.css('background-size', 'cover');
 
-		var single = $('<a href=\'javascript:\'></a>').addClass('single')
+		var single = $('<aside style=\'cursor:pointer\'></aside>').addClass('single')
 			.sm(6).xs(6).md(4).lg(4)
 			.css('margin-bottom', '20px')
 			.append(caption);
@@ -26,6 +26,15 @@ app.partial.tumblr = function(){
 		$('.tumblr').addClass('row').fontsizeReset().append(single);
 		caption.height(caption.outerWidth())
 		.css('min-height', caption.outerWidth() +'px');
+
+		$('a', caption).each(function(){
+			$(this).html($(this).text())
+				.addClass('notranslate')
+				.on('click', function(e){
+					e.stopPropagation();
+				})
+				.attr('target','_blank');
+		});
 
 		single.on('click', function(){
 			var photos = [];
