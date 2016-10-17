@@ -86,6 +86,7 @@ app.partial.tumblr = function(){
 	});
 
 
+
 };
 $.fn.sm = function(col){
 	return this.addClass('col-sm-' + col);
