@@ -32,7 +32,10 @@
 			border: 1px solid #878787;
 			&:after{
 				opacity: 0;
-				background: rgba(0,0,0,0.6);
+				// background: rgba(0,0,0,0.6);
+				background: inherit;
+				filter: invert(1);
+				-webkit-filter: invert(1);
 				content:'';
 				position: absolute;
 				top:0;
