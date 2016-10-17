@@ -23,6 +23,8 @@
 		&:hover{
 			aside:after,.caption{
 				opacity: inherit;
+				transform: scale(1.02);
+				transition: 2s ease-out 0s;
 			}
 		}
 		>aside{
@@ -34,8 +36,8 @@
 				opacity: 0;
 				// background: rgba(0,0,0,0.6);
 				background: inherit;
-				filter: invert(1);
-				-webkit-filter: invert(1);
+				filter: invert(1) brightness(0.7);
+				-webkit-filter: invert(1) brightness(0.7);
 				content:'';
 				position: absolute;
 				top:0;
@@ -48,6 +50,7 @@
 		.caption{
 			max-width: 100%;
 			overflow: hidden;
+			backface-visibility: hidden;
 			p{
 				letter-spacing: 0;
 				margin:0;				
