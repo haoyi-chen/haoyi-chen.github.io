@@ -17,36 +17,6 @@ header {
 		height: 100px;
 		margin: 0;
 	}
-
-	@media screen and (max-width: 768px) {
-
-		.burger{
-			z-index: 6;
-			position: absolute;
-			top:0;
-			right: 0;
-			margin: vwsm(17) vwsm(31) 0 0;
-
-			opacity: 0.8;
-
-			transition-duration: 0.3s;
-
-			img{
-				width: vwsm(57);
-			}
-
-			&:hover{
-				opacity: inherit;
-			}
-		}
-		background: rgba(0, 0, 0, 0) url("../img/mobile/common/header-bg.png") center top/auto 100% no-repeat;
-		left: 0;
-		position: fixed;
-		top: 0;
-		width: 100vw;
-		z-index: 10;
-		height: vwsm(130);
-	}
 }
 
 body.overlay{

@@ -11,8 +11,9 @@ app.partial.tumblr = function(){
 
 		var caption = $('<aside class=\'vertical-middle\'><h3 class=\'caption\'>'+d['photo-caption']+'</h3></aside>')
 			.sm(12).md(12).lg(12).xs(12).fontsize(13)
-			.css('background', 'url(' + d['photo-url-500'] + ')')
-			.css('background-size', 'cover');
+			.css('background-image', 'url(' + d['photo-url-500'] + ')')
+			.css('background-size', 'cover')
+			.css('background-position', 'center');
 
 		var single = $('<aside style=\'cursor:pointer\'></aside>').addClass('single')
 			.sm(6).xs(6).md(4).lg(4)
