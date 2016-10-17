@@ -57,7 +57,14 @@ app.partial.tumblr = function(){
 				thumbnail: true,
 				dynamic: true,
 				dynamicEl: photos
+			}).on('onAfterAppendSubHtml.lg',function(){
+				$('.lg-sub-html a').each(function(){
+					$(this).html($(this).text())
+						.addClass('notranslate')
+						.attr('target','_blank');
+				});
 			});
+
 		});
 	});
 
