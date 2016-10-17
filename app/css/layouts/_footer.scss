@@ -1,15 +1,10 @@
 
 /* Custom page header */
 footer {
-	width:1056px;
 	margin: 0 auto;
-	height:105px;
+	height:30px;
 	.copy{
 		margin:0 auto;
 		color:#403f3f;
-	}
-	@media screen and (max-width: 768px) {
-		width: auto;
-		height: vwsm(100);
 	}
 }
