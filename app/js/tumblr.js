@@ -20,7 +20,7 @@ app.partial.tumblr = function(){
 			.append(caption);
 
 		if(typeof d.tags != 'undefined'){
-			single.attr('data-tags', d.tags.join(' '));
+			single.attr('data-tags', d.tags.join('|'));
 		}
 
 		$('.tumblr').addClass('row').fontsizeReset().append(single);
@@ -73,7 +73,7 @@ app.partial.tumblr = function(){
 		a.on('click', function(){
 			var target = $(this).attr('data-target');
 			_.each($('.single'), function(d, i){
-				var tags = $(d).attr('data-tags') ? $(d).attr('data-tags').split(' ') : [];
+				var tags = $(d).attr('data-tags') ? $(d).attr('data-tags').split('|') : [];
 				if(_(tags).includes(target)){
 					$(d).fadeIn(450);
 				}else{
