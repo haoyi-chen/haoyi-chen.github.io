@@ -15,15 +15,15 @@ app.partial.tumblr = function(){
 			.css('background-size', 'cover');
 
 		var single = $('<a href=\'javascript:\'></a>').addClass('single')
-			.sm(6).md(2).lg(2).xs(6)
-			.css('margin-top', '20px')
+			.sm(6).xs(6).md(4).lg(4)
+			.css('margin-bottom', '20px')
 			.append(caption);
 
 		if(typeof d.tags != 'undefined'){
 			single.attr('data-tags', d.tags.join(' '));
 		}
 
-		$('.jumbotron').addClass('row').fontsizeReset().append(single);
+		$('.tumblr').addClass('row').fontsizeReset().append(single);
 		caption.height(caption.outerWidth())
 		.css('min-height', caption.outerWidth() +'px');
 
@@ -82,7 +82,7 @@ app.partial.tumblr = function(){
 			});
 		});
 
-		$('header .nav').append(a);
+		$('.nav').append(a);
 	});
 
 
