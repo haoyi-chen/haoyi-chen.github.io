@@ -1,5 +1,16 @@
 header {
-	border-top: 5px solid #1380e6;
+	height: 105px;
+	>aside{
+		border-top: 5px solid #1380e6;
+		border-bottom: 1px solid #888;
+		position: fixed;
+		top:0;
+		height: 0;
+		width: 100%;
+		z-index: 100;
+		background: #fff;
+		height: 100px;
+	}
 	.text-muted{
 		font-weight: lighter;
 		line-height: 100px;

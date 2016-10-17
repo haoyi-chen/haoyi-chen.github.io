@@ -53,7 +53,7 @@ app.partial.tumblr = function(){
 	});
 
 	$(window).on('resize', function(){
-		var caption = $('.single aside');
+		var caption = $('.single aside:visible');
 		caption.height(caption.outerWidth())
 		.css('min-height', caption.outerWidth() +'px');
 	});
@@ -65,7 +65,7 @@ app.partial.tumblr = function(){
 	});
 	$('<li><a href=\'javascript:\'>all</a></li>').on('click', function(){
 		$('.single').fadeIn(450);
-	}).appendTo($('header .nav'));
+	}).appendTo($('.nav'));
 
 	_.each(tumblrTags, function(d, i){
 		var a = $('<li><a href=\'javascript:\'>'+i+'</a></li>');
