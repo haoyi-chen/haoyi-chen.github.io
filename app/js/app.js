@@ -11,7 +11,7 @@ app.partial = {};
 // var dayOfMonth = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 // 網址為 gulp 或者 github 時 設定成debug 模式
-var debug = /localhost[:]9000|nelson119.github.io/.test(location.href);
+var debug = /localhost[:]9000/.test(location.href);
 
 var share = {
 	facebook: function(href, title){
@@ -44,35 +44,35 @@ $(function(){
 	$(window).trigger('resize');
 	//分享按鈕
 
-	$('.share .facebook').on('click', function(e){
-		share.facebook();
+	// $('.share .facebook').on('click', function(e){
+	// 	share.facebook();
 
-		e.stopPropagation();
+	// 	e.stopPropagation();
 
-		e.preventDefault();
+	// 	e.preventDefault();
 
-		return false;
-	});
+	// 	return false;
+	// });
 
-	$('.share .googleplus').on('click', function(e){
-		share.googleplus();
+	// $('.share .googleplus').on('click', function(e){
+	// 	share.googleplus();
 
-		e.stopPropagation();
+	// 	e.stopPropagation();
 
-		e.preventDefault();
+	// 	e.preventDefault();
 
-		return false;
-	});
+	// 	return false;
+	// });
 
-	$('.share .email').on('click', function(e){
-		share.email();
+	// $('.share .email').on('click', function(e){
+	// 	share.email();
 
-		e.stopPropagation();
+	// 	e.stopPropagation();
 
-		e.preventDefault();
+	// 	e.preventDefault();
 
-		return false;
-	});
+	// 	return false;
+	// });
 
 });
 

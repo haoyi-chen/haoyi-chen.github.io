@@ -10,6 +10,7 @@ app.partial.tumblr = function(){
 	_(tumblr_api_read.posts).each(function(d, i){
 
 		var caption = $('<aside class=\'vertical-middle\'><h3 class=\'caption\'>'+d['photo-caption']+'</h3></aside>')
+		var caption = $('<aside class=\'vertical-middle\'></aside>')
 			.sm(12).md(12).lg(12).xs(12).fontsize(13)
 			.css('background-image', 'url(' + d['photo-url-500'] + ')')
 			.css('background-size', 'cover')
