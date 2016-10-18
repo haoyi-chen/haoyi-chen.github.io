@@ -112,7 +112,7 @@ html{
 	.container{
 		min-width: 320px;
 	}
-	&.ie,&.firefox.windows{
+	&.ie,&.firefox.windows7{
 		body{
 			font-family: $main-font-fallback;
 		}

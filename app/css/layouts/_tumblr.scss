@@ -24,7 +24,9 @@
 			aside:after,.caption{
 				opacity: inherit;
 				transform: scale(1.02);
-				transition: 2s ease-out 0s;
+				transition: 0.5s linear 0s;
+				backface-visibility: hidden;
+				transform-origin: center center 1px;
 			}
 		}
 		>aside{
@@ -32,6 +34,8 @@
 			color: #eee;
 			letter-spacing: -1em;
 			border: 1px solid #878787;
+			backface-visibility: hidden;
+			transform-origin: center center 1px;
 			&:after{
 				opacity: 0;
 				// background: rgba(0,0,0,0.6);
@@ -50,12 +54,11 @@
 		.caption{
 			max-width: 100%;
 			overflow: hidden;
-			backface-visibility: hidden;
 			p{
 				letter-spacing: 0;
 				margin:0;				
 				line-height: 1.2;
-				white-space: nowrap;
+				// white-space: nowrap;
 				font-size: $base-font-size;
 			}
 			transition: 0.4s ease-out 0s;
