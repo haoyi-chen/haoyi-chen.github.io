@@ -24,7 +24,7 @@
 .lg-actions .lg-next, .lg-actions .lg-prev {
   background-color: rgba(0, 0, 0, 0.45);
   border-radius: 2px;
-  color: #000;
+  color: #999;
   cursor: pointer;
   display: block;
   font-size: 22px;
